@@ -57,7 +57,7 @@ function ArticlePage() {
           <div>
             <Reveal><p className="lede text-muted-foreground">{article.excerpt}</p></Reveal>
             <div className="mt-10 max-w-2xl space-y-6 text-sm leading-relaxed text-muted-foreground">
-              {article.body.map((p, i) => <p key={i}>{p}</p>)}
+              {article.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
             </div>
             <ArrowLink to="/inspiration" className="mt-12">Back to the journal</ArrowLink>
           </div>

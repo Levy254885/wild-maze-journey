@@ -66,7 +66,7 @@ function GalleryPage() {
         </div>
       </section>
 
-      <Lightbox images={list} index={open} onClose={() => setOpen(null)} onIndexChange={setOpen} />
+      <Lightbox images={list} index={open} onClose={() => setOpen(null)} onNavigate={(i: number) => setOpen(i)} />
     </>
   );
 }

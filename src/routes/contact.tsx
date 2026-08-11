@@ -42,17 +42,15 @@ function ContactPage() {
               </div>
               <div className="rule pt-5">
                 <dt className="eyebrow">Telephone</dt>
-                <dd className="mt-2">
-                  <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="line-link text-muted-foreground">{site.phone}</a>
+                <dd className="mt-2 flex flex-col gap-1">
+                  {site.phoneLinks.map((tel, i) => (
+                    <a key={tel} href={`tel:${tel}`} className="line-link text-muted-foreground">{site.phones[i]}</a>
+                  ))}
                 </dd>
               </div>
               <div className="rule pt-5">
                 <dt className="eyebrow">WhatsApp</dt>
                 <dd className="mt-2 text-muted-foreground"><WhatsAppLink /></dd>
-              </div>
-              <div className="rule pt-5">
-                <dt className="eyebrow">Office</dt>
-                <dd className="mt-2 text-muted-foreground">{site.address}</dd>
               </div>
             </dl>
           </Reveal>

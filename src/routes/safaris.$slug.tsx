@@ -52,7 +52,7 @@ function SafariDetail() {
             <div className="rule mt-8 pt-5">
               <p className="eyebrow">Highlights</p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                {safari.highlights.map((h) => <li key={h}>{h}</li>)}
+                {safari.highlights.map((h: string) => <li key={h}>{h}</li>)}
               </ul>
             </div>
             <ArrowButton onClick={() => openEnquiry(safari.name)} className="mt-10">
@@ -64,7 +64,7 @@ function SafariDetail() {
 
       <section data-nav-theme="dark" className="px-5 sm:px-8 lg:px-12">
         <div className="mx-auto grid max-w-[1400px] gap-6 sm:grid-cols-2 lg:gap-10">
-          {safari.images.slice(0, 4).map((src, i) => (
+          {safari.images.slice(0, 4).map((src: string, i: number) => (
             <ImageReveal
               key={src + i}
               src={src}
@@ -77,7 +77,7 @@ function SafariDetail() {
 
       <section data-nav-theme="dark" className="bg-background px-5 py-24 sm:px-8 lg:px-12 lg:py-36">
         <div className="mx-auto max-w-[1400px] space-y-16">
-          {safari.sections.map((sec) => (
+          {safari.sections.map((sec: { title: string; body: string }) => (
             <Reveal key={sec.title} className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-24">
               <h2 className="display-md max-w-[16ch]">{sec.title}</h2>
               <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">{sec.body}</p>

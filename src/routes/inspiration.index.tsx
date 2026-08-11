@@ -5,7 +5,7 @@ import { ArrowLink } from "@/components/ArrowLink";
 import { articles } from "@/data/articles";
 import { media } from "@/data/media";
 
-export const Route = createFileRoute("/inspiration")({
+export const Route = createFileRoute("/inspiration/")({
   head: () => ({
     meta: [
       { title: "Inspiration — The Wild Maze Journal" },
