@@ -18,8 +18,9 @@ type ArrowLinkProps = {
 
 /** Understated editorial link with a nudging arrow. */
 export function ArrowLink({ children, className, ...props }: ArrowLinkProps) {
+  const linkProps = props as ComponentProps<typeof Link>;
   return (
-    <Link {...props} className={cn("arrow-link", className)}>
+    <Link {...linkProps} className={cn("arrow-link", className)}>
       <span>{children}</span>
       <Arrow />
     </Link>
