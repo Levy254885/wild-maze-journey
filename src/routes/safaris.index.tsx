@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { SafariCollection } from "@/components/Collections";
 import { media } from "@/data/media";
 
-export const Route = createFileRoute("/safaris")({
+export const Route = createFileRoute("/safaris/")({
   head: () => ({
     meta: [
       { title: "Safari Journeys — Wild Maze Safaris" },

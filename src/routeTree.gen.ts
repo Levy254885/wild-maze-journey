@@ -10,11 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DestinationsRouteImport } from './routes/destinations'
+import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as OurStoryRouteImport } from './routes/our-story'
+import { Route as SafarisIndexRouteImport } from './routes/safaris.index'
+import { Route as SafarisSlugRouteImport } from './routes/safaris.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsRoute = DestinationsRouteImport.update({
+  id: '/destinations',
+  path: '/destinations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesRoute = ExperiencesRouteImport.update({
+  id: '/experiences',
+  path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OurStoryRoute = OurStoryRouteImport.update({
@@ -22,31 +36,76 @@ const OurStoryRoute = OurStoryRouteImport.update({
   path: '/our-story',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SafarisIndexRoute = SafarisIndexRouteImport.update({
+  id: '/safaris/',
+  path: '/safaris/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafarisSlugRoute = SafarisSlugRouteImport.update({
+  id: '/safaris/$slug',
+  path: '/safaris/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/destinations': typeof DestinationsRoute
+  '/experiences': typeof ExperiencesRoute
   '/our-story': typeof OurStoryRoute
+  '/safaris/$slug': typeof SafarisSlugRoute
+  '/safaris/': typeof SafarisIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/destinations': typeof DestinationsRoute
+  '/experiences': typeof ExperiencesRoute
   '/our-story': typeof OurStoryRoute
+  '/safaris/$slug': typeof SafarisSlugRoute
+  '/safaris': typeof SafarisIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/destinations': typeof DestinationsRoute
+  '/experiences': typeof ExperiencesRoute
   '/our-story': typeof OurStoryRoute
+  '/safaris/$slug': typeof SafarisSlugRoute
+  '/safaris/': typeof SafarisIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/our-story'
+  fullPaths:
+    | '/'
+    | '/destinations'
+    | '/experiences'
+    | '/our-story'
+    | '/safaris/$slug'
+    | '/safaris/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/our-story'
-  id: '__root__' | '/' | '/our-story'
+  to:
+    | '/'
+    | '/destinations'
+    | '/experiences'
+    | '/our-story'
+    | '/safaris/$slug'
+    | '/safaris'
+  id:
+    | '__root__'
+    | '/'
+    | '/destinations'
+    | '/experiences'
+    | '/our-story'
+    | '/safaris/$slug'
+    | '/safaris/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DestinationsRoute: typeof DestinationsRoute
+  ExperiencesRoute: typeof ExperiencesRoute
   OurStoryRoute: typeof OurStoryRoute
+  SafarisSlugRoute: typeof SafarisSlugRoute
+  SafarisIndexRoute: typeof SafarisIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +117,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/destinations': {
+      id: '/destinations'
+      path: '/destinations'
+      fullPath: '/destinations'
+      preLoaderRoute: typeof DestinationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences': {
+      id: '/experiences'
+      path: '/experiences'
+      fullPath: '/experiences'
+      preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-story': {
       id: '/our-story'
       path: '/our-story'
@@ -65,12 +138,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/safaris/': {
+      id: '/safaris/'
+      path: '/safaris'
+      fullPath: '/safaris/'
+      preLoaderRoute: typeof SafarisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safaris/$slug': {
+      id: '/safaris/$slug'
+      path: '/safaris/$slug'
+      fullPath: '/safaris/$slug'
+      preLoaderRoute: typeof SafarisSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DestinationsRoute: DestinationsRoute,
+  ExperiencesRoute: ExperiencesRoute,
   OurStoryRoute: OurStoryRoute,
+  SafarisSlugRoute: SafarisSlugRoute,
+  SafarisIndexRoute: SafarisIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
