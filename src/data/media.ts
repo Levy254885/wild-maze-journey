@@ -1,0 +1,48 @@
+/**
+ * Central media registry.
+ *
+ * `client.*` entries are Wild Maze Safaris' own supplied photographs (CDN hosted).
+ * `temp.*` entries are TEMPORARY placeholders pending client photography —
+ * replace the URL in this single file when the real asset arrives.
+ *
+ * No hero video has been supplied yet. When it is, add it as `client.heroVideo`
+ * and pass it to <VideoHero src={...} /> on the homepage.
+ */
+
+import bushBreakfast from "@/assets/bush-breakfast-mara.jpg.asset.json";
+import lakesideDining from "@/assets/lakeside-dining.jpg.asset.json";
+import spaWellness from "@/assets/spa-wellness.jpg.asset.json";
+import tentedSuite from "@/assets/tented-suite.jpg.asset.json";
+import sundownerRock from "@/assets/sundowner-rock.jpg.asset.json";
+
+const u = (id: string, w = 1800) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=72`;
+
+export const client = {
+  bushBreakfast: bushBreakfast.url,
+  lakesideDining: lakesideDining.url,
+  spaWellness: spaWellness.url,
+  tentedSuite: tentedSuite.url,
+  sundownerRock: sundownerRock.url,
+  /** heroVideo: "" — awaiting client video */
+  heroVideo: "",
+};
+
+/** TEMPORARY imagery — replace with client photography. */
+export const temp = {
+  savannah: u("1547471080-7cc2caa01a7e"),
+  gameDrive: u("1516426122078-c23e76319801"),
+  giraffeSunset: u("1523805009345-7448845a9e53"),
+  elephantMist: u("1535941339077-2dd1c7963098"),
+  elephants: u("1521651201144-634f700b36ef"),
+  lions: u("1571406252241-db0280bd36cd"),
+  rhinos: u("1504173010664-32509aeebb62"),
+  kilimanjaro: u("1526481280693-3bfa7568e0f3"),
+  balloon: u("1519659528534-7fd733a832a0"),
+  beach: u("1544551763-46a013bb70d5"),
+  coral: u("1552465011-b4e21bf6e79a"),
+  giraffe: u("1516815231560-8f41ec531527"),
+};
+
+export const media = { ...client, ...temp };
+export type MediaKey = keyof typeof media;

@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CelebrationsRouteImport } from './routes/celebrations'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DestinationsRouteImport } from './routes/destinations'
+import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as OurStoryRouteImport } from './routes/our-story'
+import { Route as InspirationIndexRouteImport } from './routes/inspiration.index'
+import { Route as InspirationSlugRouteImport } from './routes/inspiration.$slug'
+import { Route as SafarisIndexRouteImport } from './routes/safaris.index'
+import { Route as SafarisSlugRouteImport } from './routes/safaris.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CelebrationsRoute = CelebrationsRouteImport.update({
+  id: '/celebrations',
+  path: '/celebrations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsRoute = DestinationsRouteImport.update({
+  id: '/destinations',
+  path: '/destinations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesRoute = ExperiencesRouteImport.update({
+  id: '/experiences',
+  path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurStoryRoute = OurStoryRouteImport.update({
+  id: '/our-story',
+  path: '/our-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InspirationIndexRoute = InspirationIndexRouteImport.update({
+  id: '/inspiration/',
+  path: '/inspiration/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InspirationSlugRoute = InspirationSlugRouteImport.update({
+  id: '/inspiration/$slug',
+  path: '/inspiration/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafarisIndexRoute = SafarisIndexRouteImport.update({
+  id: '/safaris/',
+  path: '/safaris/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafarisSlugRoute = SafarisSlugRouteImport.update({
+  id: '/safaris/$slug',
+  path: '/safaris/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/celebrations': typeof CelebrationsRoute
+  '/contact': typeof ContactRoute
+  '/destinations': typeof DestinationsRoute
+  '/experiences': typeof ExperiencesRoute
+  '/gallery': typeof GalleryRoute
+  '/our-story': typeof OurStoryRoute
+  '/inspiration/$slug': typeof InspirationSlugRoute
+  '/safaris/$slug': typeof SafarisSlugRoute
+  '/inspiration/': typeof InspirationIndexRoute
+  '/safaris/': typeof SafarisIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/celebrations': typeof CelebrationsRoute
+  '/contact': typeof ContactRoute
+  '/destinations': typeof DestinationsRoute
+  '/experiences': typeof ExperiencesRoute
+  '/gallery': typeof GalleryRoute
+  '/our-story': typeof OurStoryRoute
+  '/inspiration/$slug': typeof InspirationSlugRoute
+  '/safaris/$slug': typeof SafarisSlugRoute
+  '/inspiration': typeof InspirationIndexRoute
+  '/safaris': typeof SafarisIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/celebrations': typeof CelebrationsRoute
+  '/contact': typeof ContactRoute
+  '/destinations': typeof DestinationsRoute
+  '/experiences': typeof ExperiencesRoute
+  '/gallery': typeof GalleryRoute
+  '/our-story': typeof OurStoryRoute
+  '/inspiration/$slug': typeof InspirationSlugRoute
+  '/safaris/$slug': typeof SafarisSlugRoute
+  '/inspiration/': typeof InspirationIndexRoute
+  '/safaris/': typeof SafarisIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/celebrations'
+    | '/contact'
+    | '/destinations'
+    | '/experiences'
+    | '/gallery'
+    | '/our-story'
+    | '/inspiration/$slug'
+    | '/safaris/$slug'
+    | '/inspiration/'
+    | '/safaris/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/celebrations'
+    | '/contact'
+    | '/destinations'
+    | '/experiences'
+    | '/gallery'
+    | '/our-story'
+    | '/inspiration/$slug'
+    | '/safaris/$slug'
+    | '/inspiration'
+    | '/safaris'
+  id:
+    | '__root__'
+    | '/'
+    | '/celebrations'
+    | '/contact'
+    | '/destinations'
+    | '/experiences'
+    | '/gallery'
+    | '/our-story'
+    | '/inspiration/$slug'
+    | '/safaris/$slug'
+    | '/inspiration/'
+    | '/safaris/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CelebrationsRoute: typeof CelebrationsRoute
+  ContactRoute: typeof ContactRoute
+  DestinationsRoute: typeof DestinationsRoute
+  ExperiencesRoute: typeof ExperiencesRoute
+  GalleryRoute: typeof GalleryRoute
+  OurStoryRoute: typeof OurStoryRoute
+  InspirationSlugRoute: typeof InspirationSlugRoute
+  SafarisSlugRoute: typeof SafarisSlugRoute
+  InspirationIndexRoute: typeof InspirationIndexRoute
+  SafarisIndexRoute: typeof SafarisIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +182,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/celebrations': {
+      id: '/celebrations'
+      path: '/celebrations'
+      fullPath: '/celebrations'
+      preLoaderRoute: typeof CelebrationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations': {
+      id: '/destinations'
+      path: '/destinations'
+      fullPath: '/destinations'
+      preLoaderRoute: typeof DestinationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences': {
+      id: '/experiences'
+      path: '/experiences'
+      fullPath: '/experiences'
+      preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-story': {
+      id: '/our-story'
+      path: '/our-story'
+      fullPath: '/our-story'
+      preLoaderRoute: typeof OurStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inspiration/': {
+      id: '/inspiration/'
+      path: '/inspiration'
+      fullPath: '/inspiration/'
+      preLoaderRoute: typeof InspirationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inspiration/$slug': {
+      id: '/inspiration/$slug'
+      path: '/inspiration/$slug'
+      fullPath: '/inspiration/$slug'
+      preLoaderRoute: typeof InspirationSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safaris/': {
+      id: '/safaris/'
+      path: '/safaris'
+      fullPath: '/safaris/'
+      preLoaderRoute: typeof SafarisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safaris/$slug': {
+      id: '/safaris/$slug'
+      path: '/safaris/$slug'
+      fullPath: '/safaris/$slug'
+      preLoaderRoute: typeof SafarisSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CelebrationsRoute: CelebrationsRoute,
+  ContactRoute: ContactRoute,
+  DestinationsRoute: DestinationsRoute,
+  ExperiencesRoute: ExperiencesRoute,
+  GalleryRoute: GalleryRoute,
+  OurStoryRoute: OurStoryRoute,
+  InspirationSlugRoute: InspirationSlugRoute,
+  SafarisSlugRoute: SafarisSlugRoute,
+  InspirationIndexRoute: InspirationIndexRoute,
+  SafarisIndexRoute: SafarisIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
