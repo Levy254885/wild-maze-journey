@@ -13,7 +13,8 @@ function Arrow() {
 type ArrowLinkProps = {
   children: ReactNode;
   className?: string;
-} & Omit<ComponentProps<typeof Link>, "children" | "className">;
+  params?: Record<string, string>;
+} & Omit<ComponentProps<typeof Link>, "children" | "className" | "params">;
 
 /** Understated editorial link with a nudging arrow. */
 export function ArrowLink({ children, className, ...props }: ArrowLinkProps) {
