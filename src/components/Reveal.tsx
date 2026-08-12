@@ -70,13 +70,11 @@ export function ImageReveal({
   priority = false,
   sizes = "100vw",
 }: ImageRevealProps) {
-  const { ref, visible } = useInView<HTMLDivElement>(0.1);
   const [failed, setFailed] = useState(false);
 
   return (
     <div
-      ref={ref}
-      data-visible={priority ? true : visible}
+      data-visible="true"
       className={cn("reveal-clip relative overflow-hidden bg-secondary", className)}
     >
       {failed ? (
