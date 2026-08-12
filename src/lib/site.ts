@@ -3,12 +3,10 @@
  * Update contact details here and they change site-wide.
  */
 
-import logoAsset from "@/assets/wildmaze-logo.png.asset.json";
-
 export const site = {
   name: "Wild Maze Safaris",
   tagline: "Beyond the ordinary",
-  logo: logoAsset.url,
+  logo: "/images/wildmaze-logo.png",
   email: "info@wildmazesafaris.com",
   phones: ["0724433483", "0719222750"],
   // Kenyan numbers in international format for tel:/WhatsApp

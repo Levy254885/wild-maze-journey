@@ -71,10 +71,19 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-weight: 300;
+    font-size: 1.0625rem;
+    line-height: 1.7;
     letter-spacing: 0.01em;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 1.125rem;
+    }
+  }
+
 
   h1,
   h2,
@@ -100,8 +109,8 @@
 /* ——— editorial primitives ——— */
 
 @utility eyebrow {
-  font-size: 0.6875rem;
-  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -109,27 +118,27 @@
 @utility display-xl {
   font-family: var(--font-display);
   font-weight: 300;
-  line-height: 0.95;
-  font-size: clamp(2.75rem, 8vw, 7rem);
+  line-height: 0.98;
+  font-size: clamp(3.25rem, 8.6vw, 7.75rem);
 }
 
 @utility display-lg {
   font-family: var(--font-display);
   font-weight: 300;
-  line-height: 1.02;
-  font-size: clamp(2.25rem, 5.2vw, 4.25rem);
+  line-height: 1.04;
+  font-size: clamp(2.6rem, 5.6vw, 4.75rem);
 }
 
 @utility display-md {
   font-family: var(--font-display);
   font-weight: 300;
-  line-height: 1.1;
-  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.12;
+  font-size: clamp(2rem, 3.5vw, 3.1rem);
 }
 
 @utility lede {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.1vw, 1.875rem);
+  font-size: clamp(1.45rem, 2.3vw, 2.1rem);
   line-height: 1.45;
   font-weight: 300;
 }
@@ -137,6 +146,7 @@
 @utility rule {
   border-top: 1px solid var(--border);
 }
+
 
 /* Understated arrow link */
 @utility arrow-link {
@@ -283,5 +293,21 @@
     opacity: 1;
     transform: none;
     clip-path: none;
+  }
+}
+
+/* Slightly larger small-text scale for readability */
+@layer utilities {
+  .text-xs {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+  }
+  .text-sm {
+    font-size: 0.9688rem;
+    line-height: 1.7;
+  }
+  .text-base {
+    font-size: 1.0625rem;
+    line-height: 1.75;
   }
 }

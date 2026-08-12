@@ -9,24 +9,19 @@
  * and pass it to <VideoHero src={...} /> on the homepage.
  */
 
-import bushBreakfast from "@/assets/bush-breakfast-mara.jpg.asset.json";
-import lakesideDining from "@/assets/lakeside-dining.jpg.asset.json";
-import spaWellness from "@/assets/spa-wellness.jpg.asset.json";
-import tentedSuite from "@/assets/tented-suite.jpg.asset.json";
-import sundownerRock from "@/assets/sundowner-rock.jpg.asset.json";
-
-const u = (id: string, w = 1800) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=72`;
+const u = (id: string, w = 1600) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
 
 export const client = {
-  bushBreakfast: bushBreakfast.url,
-  lakesideDining: lakesideDining.url,
-  spaWellness: spaWellness.url,
-  tentedSuite: tentedSuite.url,
-  sundownerRock: sundownerRock.url,
+  bushBreakfast: "/images/bush-breakfast-mara.jpg",
+  lakesideDining: "/images/lakeside-dining.jpg",
+  spaWellness: "/images/spa-wellness.jpg",
+  tentedSuite: "/images/tented-suite.jpg",
+  sundownerRock: "/images/sundowner-rock.jpg",
   /** heroVideo: "" — awaiting client video */
   heroVideo: "",
 };
+
 
 /** TEMPORARY imagery — replace with client photography. */
 export const temp = {
