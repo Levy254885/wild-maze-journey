@@ -82,12 +82,12 @@ export function Header() {
             <span className="sr-only">{site.name}</span>
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-7 xl:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-5 xl:flex 2xl:gap-7">
             {navigation.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="eyebrow line-link opacity-90 transition-opacity hover:opacity-100"
+                className="eyebrow line-link whitespace-nowrap text-[0.68rem] tracking-[0.18em] opacity-90 transition-opacity hover:opacity-100 2xl:text-[0.75rem] 2xl:tracking-[0.22em]"
                 activeProps={{ className: "opacity-100" }}
               >
                 {item.label}
@@ -95,11 +95,11 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-4">
             <button
               type="button"
               onClick={() => setCollectionOpen((v) => !v)}
-              className="eyebrow hidden items-center gap-2 opacity-90 transition-opacity hover:opacity-100 xl:inline-flex"
+              className="eyebrow hidden items-center gap-2 whitespace-nowrap text-[0.68rem] tracking-[0.18em] opacity-90 transition-opacity hover:opacity-100 xl:inline-flex 2xl:text-[0.75rem]"
               aria-expanded={collectionOpen}
             >
               Destinations
@@ -110,10 +110,11 @@ export function Header() {
             <button
               type="button"
               onClick={() => openEnquiry()}
-              className="eyebrow hidden border-b border-current pb-1 transition-opacity hover:opacity-70 lg:inline-block"
+              className="eyebrow hidden whitespace-nowrap border-b border-current pb-1 text-[0.68rem] tracking-[0.18em] transition-opacity hover:opacity-70 lg:inline-block 2xl:text-[0.75rem]"
             >
               Plan your safari
             </button>
+
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
