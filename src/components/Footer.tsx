@@ -77,7 +77,7 @@ function Newsletter() {
                 className="mt-0.5 h-4 w-4 shrink-0 accent-[oklch(0.32_0.056_152)]"
               />
               I agree to receive occasional emails from {site.name} and have read the{" "}
-              <Link to="/privacy" className="line-link text-foreground">privacy policy</Link>.
+              <Link to="/contact" className="line-link text-foreground">privacy policy</Link>.
             </label>
             {error ? (
               <p role="alert" className="text-xs text-destructive sm:col-span-2">{error}</p>
