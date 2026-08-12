@@ -179,9 +179,9 @@ export function Footer() {
               © {new Date().getFullYear()} {site.name}. All rights reserved.
             </p>
             <ul className="flex flex-wrap gap-6">
-              <li><Link to="/privacy" className="line-link">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="line-link">Terms &amp; Conditions</Link></li>
-              <li><Link to="/cookies" className="line-link">Cookie Policy</Link></li>
+              <li><Link to="/contact" className="line-link">Privacy Policy</Link></li>
+              <li><Link to="/contact" className="line-link">Terms &amp; Conditions</Link></li>
+              <li><Link to="/contact" className="line-link">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>
