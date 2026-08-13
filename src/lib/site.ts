@@ -22,6 +22,7 @@ export const site = {
    * including Vercel). Update the query below if the client supplies an
    * exact street address or a Google Business Profile place ID.
    */
+  address: "Westlands Road, Nairobi, Kenya",
   mapQuery: "WildMaze Safaris, Nairobi, Kenya",
   mapEmbed: "https://www.google.com/maps?q=WildMaze+Safaris%2C+Nairobi%2C+Kenya&output=embed",
   mapLink: "https://www.google.com/maps/search/?api=1&query=WildMaze+Safaris%2C+Nairobi%2C+Kenya",

@@ -63,6 +63,7 @@ function ContactPage() {
         <div className="mx-auto mt-24 max-w-[1400px]">
           <Reveal>
             <p className="eyebrow text-muted-foreground">Find us</p>
+            <p className="lede mt-3">{site.address}</p>
             <div className="mt-6 aspect-[16/10] w-full overflow-hidden bg-secondary lg:aspect-[21/9]">
               <iframe
                 title={`${site.name} on Google Maps`}
