@@ -1,7 +1,7 @@
 /**
  * Central media registry.
  *
- * `client.*` entries are Wild Maze Safaris' own supplied photographs (CDN hosted).
+ * `client.*` entries are WildMaze Safaris' own supplied photographs (CDN hosted).
  * `temp.*` entries are TEMPORARY placeholders pending client photography —
  * replace the URL in this single file when the real asset arrives.
  *

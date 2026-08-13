@@ -12,13 +12,13 @@ import { site } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wild Maze Safaris — Luxury tailor-made safaris in Kenya & East Africa" },
+      { title: "WildMaze Safaris — Luxury tailor-made safaris in Kenya & East Africa" },
       {
         name: "description",
         content:
           "Private, tailor-made luxury safaris across Kenya, Tanzania and the Indian Ocean coast. Great Migration journeys, fly-in itineraries, beach and bush, photography and family safaris.",
       },
-      { property: "og:title", content: "Wild Maze Safaris — Beyond the ordinary" },
+      { property: "og:title", content: "WildMaze Safaris — Breaking Normalcy" },
       {
         property: "og:description",
         content:
@@ -65,7 +65,7 @@ function Home() {
           <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow opacity-80">{site.name}</p>
-              <p className="display-xl mt-4 max-w-[12ch] leading-[0.95]">Beyond the ordinary</p>
+              <p className="display-xl mt-4 max-w-[12ch] leading-[0.95]">Breaking Normalcy</p>
             </div>
             <a href="#introduction" className="eyebrow flex items-center gap-3 pb-2 opacity-85 transition-opacity hover:opacity-100">
               Scroll to discover
@@ -87,7 +87,7 @@ function Home() {
           </Reveal>
           <Reveal delay={120} className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-24">
             <p className="lede text-muted-foreground">
-              Wild Maze Safaris designs private, tailor-made journeys across Kenya, Tanzania and the
+              WildMaze Safaris designs private, tailor-made journeys across Kenya, Tanzania and the
               Indian Ocean coast — planned in detail, guided with care and paced entirely around you.
             </p>
             <div className="max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -274,7 +274,7 @@ function Home() {
               Tell us how you would like to travel.
             </h2>
             <p className="mt-8 max-w-md text-sm leading-relaxed opacity-85">
-              Every Wild Maze journey begins with a conversation. Share a few details and one of our
+              Every WildMaze journey begins with a conversation. Share a few details and one of our
               safari designers will be in touch.
             </p>
             <div className="mt-12 flex flex-wrap items-center gap-x-12 gap-y-6">

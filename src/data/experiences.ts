@@ -9,7 +9,7 @@ export interface Experience {
   image: string;
 }
 
-/** Signature services offered by Wild Maze Safaris. */
+/** Signature services offered by WildMaze Safaris. */
 export const experiences: Experience[] = [
   {
     slug: "adventure",
@@ -116,7 +116,7 @@ export interface Celebration {
   image: string;
 }
 
-/** Celebrations — drawn from services Wild Maze Safaris actually offers. */
+/** Celebrations — drawn from services WildMaze Safaris actually offers. */
 export const celebrations: Celebration[] = [
   {
     title: "Honeymoons",

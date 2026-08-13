@@ -7,10 +7,10 @@ import { client } from "@/data/media";
 export const Route = createFileRoute("/experiences")({
   head: () => ({
     meta: [
-      { title: "Safari Experiences — Wild Maze Safaris" },
-      { name: "description", content: "Bush breakfasts, sundowners, balloon flights, walking safaris, cultural immersion, spa and wellness — the experiences that make up a Wild Maze journey." },
-      { property: "og:title", content: "Safari Experiences — Wild Maze Safaris" },
-      { property: "og:description", content: "The experiences that make up a Wild Maze journey." },
+      { title: "Safari Experiences — WildMaze Safaris" },
+      { name: "description", content: "Bush breakfasts, sundowners, balloon flights, walking safaris, cultural immersion, spa and wellness — the experiences that make up a WildMaze journey." },
+      { property: "og:title", content: "Safari Experiences — WildMaze Safaris" },
+      { property: "og:description", content: "The experiences that make up a WildMaze journey." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/experiences" },
     ],

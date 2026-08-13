@@ -8,10 +8,10 @@ import { media } from "@/data/media";
 export const Route = createFileRoute("/inspiration/")({
   head: () => ({
     meta: [
-      { title: "Inspiration — The Wild Maze Journal" },
-      { name: "description", content: "Safari guides, destination notes, wildlife writing and travel tips from the Wild Maze Safaris team." },
-      { property: "og:title", content: "Inspiration — The Wild Maze Journal" },
-      { property: "og:description", content: "Safari guides, destination notes and travel tips from Wild Maze Safaris." },
+      { title: "Inspiration — The WildMaze Journal" },
+      { name: "description", content: "Safari guides, destination notes, wildlife writing and travel tips from the WildMaze Safaris team." },
+      { property: "og:title", content: "Inspiration — The WildMaze Journal" },
+      { property: "og:description", content: "Safari guides, destination notes and travel tips from WildMaze Safaris." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/inspiration" },
     ],

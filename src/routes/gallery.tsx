@@ -9,10 +9,10 @@ import { client } from "@/data/media";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Wild Maze Safaris" },
-      { name: "description", content: "Photographs from Wild Maze journeys: destinations, wildlife, camps and the experiences in between." },
-      { property: "og:title", content: "Gallery — Wild Maze Safaris" },
-      { property: "og:description", content: "Photographs from Wild Maze journeys across Kenya and East Africa." },
+      { title: "Gallery — WildMaze Safaris" },
+      { name: "description", content: "Photographs from WildMaze journeys: destinations, wildlife, camps and the experiences in between." },
+      { property: "og:title", content: "Gallery — WildMaze Safaris" },
+      { property: "og:description", content: "Photographs from WildMaze journeys across Kenya and East Africa." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/gallery" },
     ],

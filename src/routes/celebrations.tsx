@@ -8,9 +8,9 @@ import { client, media } from "@/data/media";
 export const Route = createFileRoute("/celebrations")({
   head: () => ({
     meta: [
-      { title: "Celebrations & Special Occasions — Wild Maze Safaris" },
+      { title: "Celebrations & Special Occasions — WildMaze Safaris" },
       { name: "description", content: "Honeymoons, anniversaries, proposals, milestone birthdays and private celebrations arranged in the bush and on the Indian Ocean coast." },
-      { property: "og:title", content: "Celebrations — Wild Maze Safaris" },
+      { property: "og:title", content: "Celebrations — WildMaze Safaris" },
       { property: "og:description", content: "Honeymoons, anniversaries, proposals and milestone celebrations on safari." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/celebrations" },

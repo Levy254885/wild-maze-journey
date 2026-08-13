@@ -12,12 +12,12 @@ export const Route = createFileRoute("/inspiration/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Article not found — Wild Maze Safaris" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Article not found — WildMaze Safaris" }, { name: "robots", content: "noindex" }] };
     }
     const { article } = loaderData;
     return {
       meta: [
-        { title: `${article.title} — Wild Maze Safaris` },
+        { title: `${article.title} — WildMaze Safaris` },
         { name: "description", content: article.excerpt },
         { property: "og:title", content: article.title },
         { property: "og:description", content: article.excerpt },

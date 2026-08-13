@@ -1,11 +1,11 @@
 /**
- * Central brand + contact configuration for Wild Maze Safaris.
+ * Central brand + contact configuration for WildMaze Safaris.
  * Update contact details here and they change site-wide.
  */
 
 export const site = {
-  name: "Wild Maze Safaris",
-  tagline: "Beyond the ordinary",
+  name: "WildMaze Safaris",
+  tagline: "Breaking Normalcy",
   logo: "/images/wildmaze-logo.png",
   email: "info@wildmazesafaris.com",
   phones: ["0724433483", "0719222750"],
@@ -14,7 +14,7 @@ export const site = {
   whatsapp: {
     display: "0719222750",
     number: "254719222750",
-    message: "Hello Wild Maze Safaris, I would like to enquire about planning a safari.",
+    message: "Hello WildMaze Safaris, I would like to enquire about planning a safari.",
   },
   base: "https://wildmazesafaris.com",
 } as const;

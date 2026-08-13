@@ -14,7 +14,7 @@ export interface Destination {
   best: string;
 }
 
-/** Destinations Wild Maze Safaris operates in. */
+/** Destinations WildMaze Safaris operates in. */
 export const destinations: Destination[] = [
   {
     slug: "maasai-mara",

@@ -13,14 +13,14 @@ export const Route = createFileRoute("/safaris/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Journey not found — Wild Maze Safaris" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Journey not found — WildMaze Safaris" }, { name: "robots", content: "noindex" }] };
     }
     const { safari } = loaderData;
     return {
       meta: [
-        { title: `${safari.name} — Wild Maze Safaris` },
+        { title: `${safari.name} — WildMaze Safaris` },
         { name: "description", content: safari.summary },
-        { property: "og:title", content: `${safari.name} — Wild Maze Safaris` },
+        { property: "og:title", content: `${safari.name} — WildMaze Safaris` },
         { property: "og:description", content: safari.summary },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/safaris/${safari.slug}` },

@@ -9,10 +9,10 @@ import { site } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Enquiries — Wild Maze Safaris" },
-      { name: "description", content: "Start planning a private, tailor-made safari with Wild Maze Safaris. Share your dates, party size and interests and a safari designer will reply personally." },
-      { property: "og:title", content: "Contact — Wild Maze Safaris" },
-      { property: "og:description", content: "Start planning your private, tailor-made safari with Wild Maze Safaris." },
+      { title: "Contact & Enquiries — WildMaze Safaris" },
+      { name: "description", content: "Start planning a private, tailor-made safari with WildMaze Safaris. Share your dates, party size and interests and a safari designer will reply personally." },
+      { property: "og:title", content: "Contact — WildMaze Safaris" },
+      { property: "og:description", content: "Start planning your private, tailor-made safari with WildMaze Safaris." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/contact" },
     ],
