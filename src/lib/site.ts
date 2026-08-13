@@ -17,6 +17,14 @@ export const site = {
     message: "Hello WildMaze Safaris, I would like to enquire about planning a safari.",
   },
   base: "https://wildmazesafaris.com",
+  /**
+   * Google Maps for the business itself (keyless embed — works on any host,
+   * including Vercel). Update the query below if the client supplies an
+   * exact street address or a Google Business Profile place ID.
+   */
+  mapQuery: "WildMaze Safaris, Nairobi, Kenya",
+  mapEmbed: "https://www.google.com/maps?q=WildMaze+Safaris%2C+Nairobi%2C+Kenya&output=embed",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=WildMaze+Safaris%2C+Nairobi%2C+Kenya",
 } as const;
 
 export const whatsappHref = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(
