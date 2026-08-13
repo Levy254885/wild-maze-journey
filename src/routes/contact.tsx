@@ -59,6 +59,32 @@ function ContactPage() {
             <EnquiryForm />
           </Reveal>
         </div>
+
+        <div className="mx-auto mt-24 max-w-[1400px]">
+          <Reveal>
+            <p className="eyebrow text-muted-foreground">Find us</p>
+            <div className="mt-6 aspect-[16/10] w-full overflow-hidden bg-secondary lg:aspect-[21/9]">
+              <iframe
+                title={`${site.name} on Google Maps`}
+                src={site.mapEmbed}
+                width="100%"
+                height="100%"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full border-0"
+              />
+            </div>
+            <a
+              href={site.mapLink}
+              target="_blank"
+              rel="noreferrer"
+              className="eyebrow mt-5 inline-block border-b border-foreground pb-1"
+            >
+              Open in Google Maps
+            </a>
+          </Reveal>
+        </div>
       </section>
     </>
   );
