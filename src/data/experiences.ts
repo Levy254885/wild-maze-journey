@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
       "Couples spa treatments",
       "Luxury romantic accommodation",
     ],
-    image: media.sundownerRock,
+    image: media.oceanDinner,
   },
   {
     slug: "family",

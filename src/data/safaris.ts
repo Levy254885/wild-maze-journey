@@ -252,8 +252,8 @@ export const safaris: Safari[] = [
       "Scheduled and private charter flights that trade long road transfers for more time in the wild.",
     intro:
       "The most remote and least visited country in East Africa is reached from the air. A fly-in itinerary turns a full day of driving into forty minutes over the escarpment.",
-    hero: media.giraffeSunset,
-    images: [media.giraffeSunset, media.kilimanjaro, media.savannah, media.tentedSuite],
+    hero: media.flyIn,
+    images: [media.flyIn, media.giraffeSunset, media.kilimanjaro, media.tentedSuite],
     duration: "From 5 nights",
     highlights: [
       "Scheduled and private charter flights",
@@ -342,8 +342,8 @@ export const safaris: Safari[] = [
       "Time with Maasai and Samburu communities, traditional cuisine and the conservation projects they lead.",
     intro:
       "The land you travel through is lived in. We arrange visits that are invited, paid for fairly and spent in conversation rather than performance.",
-    hero: media.bushBreakfast,
-    images: [media.bushBreakfast, media.savannah, media.giraffe, media.rhinos],
+    hero: media.walkingSafari,
+    images: [media.walkingSafari, media.bushBreakfast, media.savannah, media.giraffe],
     duration: "Added to any itinerary",
     highlights: [
       "Authentic Maasai village visits",
@@ -372,8 +372,8 @@ export const safaris: Safari[] = [
       "Rhino conservation visits, wildlife research encounters, tree planting and sustainable tourism programmes.",
     intro:
       "Some of the most affecting days on safari are spent with the people protecting it. These journeys are built around access to that work.",
-    hero: media.rhinos,
-    images: [media.rhinos, media.elephants, media.savannah, media.gameDrive],
+    hero: media.conservation,
+    images: [media.conservation, media.rhinos, media.elephants, media.savannah],
     duration: "From 5 nights",
     highlights: [
       "Rhino conservation visits",
