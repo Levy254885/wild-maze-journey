@@ -48,15 +48,17 @@ function Home() {
         />
         {client.heroVideo ? (
           <video
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center"
             src={client.heroVideo}
-            poster={client.sundownerRock}
+            poster={client.heroPoster}
             autoPlay
             muted
             loop
             playsInline
+            disablePictureInPicture
             preload="metadata"
             aria-hidden="true"
+            tabIndex={-1}
           />
         ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-ink/30" />
