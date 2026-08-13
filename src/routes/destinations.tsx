@@ -6,10 +6,10 @@ import { media } from "@/data/media";
 export const Route = createFileRoute("/destinations")({
   head: () => ({
     meta: [
-      { title: "Destinations — Wild Maze Safaris" },
-      { name: "description", content: "Maasai Mara, Amboseli, Samburu, Laikipia, Serengeti, Ngorongoro, Zanzibar and the Kenyan coast — where Wild Maze Safaris travels, and when to go." },
-      { property: "og:title", content: "Destinations — Wild Maze Safaris" },
-      { property: "og:description", content: "Where Wild Maze Safaris travels across Kenya, Tanzania and the coast." },
+      { title: "Destinations — WildMaze Safaris" },
+      { name: "description", content: "Maasai Mara, Amboseli, Samburu, Laikipia, Serengeti, Ngorongoro, Zanzibar and the Kenyan coast — where WildMaze Safaris travels, and when to go." },
+      { property: "og:title", content: "Destinations — WildMaze Safaris" },
+      { property: "og:description", content: "Where WildMaze Safaris travels across Kenya, Tanzania and the coast." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/destinations" },
     ],

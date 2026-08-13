@@ -71,11 +71,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Wild Maze Safaris — Luxury tailor-made safaris in Kenya & East Africa" },
+      { title: "WildMaze Safaris — Luxury tailor-made safaris in Kenya & East Africa" },
       {
         name: "description",
         content:
-          "Wild Maze Safaris designs private, tailor-made luxury safaris across Kenya, Tanzania and the Indian Ocean coast.",
+          "WildMaze Safaris designs private, tailor-made luxury safaris across Kenya, Tanzania and the Indian Ocean coast.",
       },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },

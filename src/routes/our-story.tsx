@@ -9,16 +9,16 @@ import { site } from "@/lib/site";
 export const Route = createFileRoute("/our-story")({
   head: () => ({
     meta: [
-      { title: "Our Story — Wild Maze Safaris" },
+      { title: "Our Story — WildMaze Safaris" },
       {
         name: "description",
         content:
-          "How Wild Maze Safaris plans private, tailor-made journeys across Kenya and East Africa — our philosophy, our approach and the concierge care behind every safari.",
+          "How WildMaze Safaris plans private, tailor-made journeys across Kenya and East Africa — our philosophy, our approach and the concierge care behind every safari.",
       },
-      { property: "og:title", content: "Our Story — Wild Maze Safaris" },
+      { property: "og:title", content: "Our Story — WildMaze Safaris" },
       {
         property: "og:description",
-        content: "Our philosophy, our approach to travel, and the care behind every Wild Maze journey.",
+        content: "Our philosophy, our approach to travel, and the care behind every WildMaze journey.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/our-story" },
@@ -42,7 +42,7 @@ function OurStory() {
           </Reveal>
           <Reveal delay={120} className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-24">
             <p className="lede text-muted-foreground">
-              Wild Maze Safaris is a Kenyan safari company designing private, tailor-made journeys
+              WildMaze Safaris is a Kenyan safari company designing private, tailor-made journeys
               across Kenya, Tanzania and the Indian Ocean coast.
             </p>
             <div className="max-w-md space-y-5 text-sm leading-relaxed text-muted-foreground">

@@ -29,8 +29,12 @@ export function Header() {
     const sample = () => {
       frame.current = null;
       setScrolled(window.scrollY > 40);
-      const el = document.elementFromPoint(24, 44);
-      const owner = el?.closest<HTMLElement>("[data-nav-theme]");
+      // Ignore the header itself when sampling the section beneath it.
+      const stack = document.elementsFromPoint(24, 44) as HTMLElement[];
+      const owner = stack
+        .filter((el) => !el.closest("header"))
+        .map((el) => el.closest<HTMLElement>("[data-nav-theme]"))
+        .find(Boolean);
       setTheme((owner?.dataset["navTheme"] as "light" | "dark") ?? "dark");
     };
     const onScroll = () => {
@@ -75,7 +79,7 @@ export function Header() {
               width={140}
               height={140}
               className={cn(
-                "h-11 w-auto transition-[filter] duration-500 sm:h-12",
+                "h-14 w-auto max-w-[210px] object-contain transition-[filter] duration-500 sm:h-16 lg:h-[4.5rem] xl:h-20",
                 light && "brightness-0 invert",
               )}
             />

@@ -9,10 +9,10 @@ import { site } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Enquiries — Wild Maze Safaris" },
-      { name: "description", content: "Start planning a private, tailor-made safari with Wild Maze Safaris. Share your dates, party size and interests and a safari designer will reply personally." },
-      { property: "og:title", content: "Contact — Wild Maze Safaris" },
-      { property: "og:description", content: "Start planning your private, tailor-made safari with Wild Maze Safaris." },
+      { title: "Contact & Enquiries — WildMaze Safaris" },
+      { name: "description", content: "Start planning a private, tailor-made safari with WildMaze Safaris. Share your dates, party size and interests and a safari designer will reply personally." },
+      { property: "og:title", content: "Contact — WildMaze Safaris" },
+      { property: "og:description", content: "Start planning your private, tailor-made safari with WildMaze Safaris." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/contact" },
     ],
@@ -57,6 +57,33 @@ function ContactPage() {
 
           <Reveal delay={100}>
             <EnquiryForm />
+          </Reveal>
+        </div>
+
+        <div className="mx-auto mt-24 max-w-[1400px]">
+          <Reveal>
+            <p className="eyebrow text-muted-foreground">Find us</p>
+            <p className="lede mt-3">{site.address}</p>
+            <div className="mt-6 aspect-[16/10] w-full overflow-hidden bg-secondary lg:aspect-[21/9]">
+              <iframe
+                title={`${site.name} on Google Maps`}
+                src={site.mapEmbed}
+                width="100%"
+                height="100%"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full border-0"
+              />
+            </div>
+            <a
+              href={site.mapLink}
+              target="_blank"
+              rel="noreferrer"
+              className="eyebrow mt-5 inline-block border-b border-foreground pb-1"
+            >
+              Open in Google Maps
+            </a>
           </Reveal>
         </div>
       </section>

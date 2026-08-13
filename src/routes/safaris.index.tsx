@@ -6,9 +6,9 @@ import { media } from "@/data/media";
 export const Route = createFileRoute("/safaris/")({
   head: () => ({
     meta: [
-      { title: "Safari Journeys — Wild Maze Safaris" },
+      { title: "Safari Journeys — WildMaze Safaris" },
       { name: "description", content: "Private, tailor-made safari journeys across Kenya, Tanzania and the Indian Ocean coast — migration, fly-in, honeymoon, family, photography and conservation itineraries." },
-      { property: "og:title", content: "Safari Journeys — Wild Maze Safaris" },
+      { property: "og:title", content: "Safari Journeys — WildMaze Safaris" },
       { property: "og:description", content: "Private, tailor-made safari journeys across Kenya, Tanzania and the coast." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/safaris" },

@@ -1,11 +1,11 @@
 /**
- * Central brand + contact configuration for Wild Maze Safaris.
+ * Central brand + contact configuration for WildMaze Safaris.
  * Update contact details here and they change site-wide.
  */
 
 export const site = {
-  name: "Wild Maze Safaris",
-  tagline: "Beyond the ordinary",
+  name: "WildMaze Safaris",
+  tagline: "Breaking Normalcy",
   logo: "/images/wildmaze-logo.png",
   email: "info@wildmazesafaris.com",
   phones: ["0724433483", "0719222750"],
@@ -14,9 +14,18 @@ export const site = {
   whatsapp: {
     display: "0719222750",
     number: "254719222750",
-    message: "Hello Wild Maze Safaris, I would like to enquire about planning a safari.",
+    message: "Hello WildMaze Safaris, I would like to enquire about planning a safari.",
   },
   base: "https://wildmazesafaris.com",
+  /**
+   * Google Maps for the business itself (keyless embed — works on any host,
+   * including Vercel). Update the query below if the client supplies an
+   * exact street address or a Google Business Profile place ID.
+   */
+  address: "Westlands Road, Nairobi, Kenya",
+  mapQuery: "WildMaze Safaris, Nairobi, Kenya",
+  mapEmbed: "https://www.google.com/maps?q=WildMaze+Safaris%2C+Nairobi%2C+Kenya&output=embed",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=WildMaze+Safaris%2C+Nairobi%2C+Kenya",
 } as const;
 
 export const whatsappHref = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(

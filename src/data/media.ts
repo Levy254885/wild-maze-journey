@@ -1,7 +1,7 @@
 /**
  * Central media registry.
  *
- * `client.*` entries are Wild Maze Safaris' own supplied photographs (CDN hosted).
+ * `client.*` entries are WildMaze Safaris' own supplied photographs (CDN hosted).
  * `temp.*` entries are TEMPORARY placeholders pending client photography —
  * replace the URL in this single file when the real asset arrives.
  *
@@ -18,19 +18,24 @@ export const client = {
   spaWellness: "/images/spa-wellness.jpg",
   tentedSuite: "/images/tented-suite.jpg",
   sundownerRock: "/images/sundowner-rock.jpg",
-  /** heroVideo: "" — awaiting client video */
-  heroVideo: "",
+  /** Client photography — supplied Aug 2026 */
+  gameDrive: "/images/lion-game-drive.jpg",
+  lions: "/images/lions-in-tree.jpg",
+  walkingSafari: "/images/walking-safari-maasai.jpg",
+  flyIn: "/images/fly-in-airstrip.jpg",
+  oceanDinner: "/images/oceanside-dinner.jpg",
+  conservation: "/images/conservation-planting.jpg",
+  heroVideo: "/videos/wildmaze-hero.mp4",
+  heroPoster: "/images/hero-video-poster.jpg",
 };
 
 
 /** TEMPORARY imagery — replace with client photography. */
 export const temp = {
   savannah: u("1547471080-7cc2caa01a7e"),
-  gameDrive: u("1516426122078-c23e76319801"),
   giraffeSunset: u("1523805009345-7448845a9e53"),
   elephantMist: u("1535941339077-2dd1c7963098"),
   elephants: u("1521651201144-634f700b36ef"),
-  lions: u("1571406252241-db0280bd36cd"),
   rhinos: u("1504173010664-32509aeebb62"),
   kilimanjaro: u("1526481280693-3bfa7568e0f3"),
   balloon: u("1519659528534-7fd733a832a0"),
