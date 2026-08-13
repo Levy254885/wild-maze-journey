@@ -62,9 +62,33 @@ export const gallery: GalleryImage[] = [
   },
   {
     src: media.gameDrive,
-    alt: "Safari vehicle on a game drive at sunset",
+    alt: "A lion walking past a safari vehicle on the open plains",
     category: "Safari",
     orientation: "landscape",
+  },
+  {
+    src: media.flyIn,
+    alt: "Guests boarding a light aircraft on a bush airstrip beside a safari Land Cruiser",
+    category: "Safari",
+    orientation: "landscape",
+  },
+  {
+    src: media.walkingSafari,
+    alt: "Guests and a Maasai guide looking out over the plains on a walking safari",
+    category: "Experiences",
+    orientation: "portrait",
+  },
+  {
+    src: media.oceanDinner,
+    alt: "Candlelit private dinner laid on a deck above the ocean at sunset",
+    category: "Experiences",
+    orientation: "portrait",
+  },
+  {
+    src: media.conservation,
+    alt: "A conservation team member planting a tree seedling",
+    category: "Experiences",
+    orientation: "portrait",
   },
   {
     src: media.balloon,
@@ -74,7 +98,7 @@ export const gallery: GalleryImage[] = [
   },
   {
     src: media.lions,
-    alt: "Two lionesses in long grass",
+    alt: "Lions resting in the branches of an acacia tree",
     category: "Wildlife",
     orientation: "landscape",
   },
