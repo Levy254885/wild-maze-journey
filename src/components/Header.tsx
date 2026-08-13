@@ -75,7 +75,7 @@ export function Header() {
               width={140}
               height={140}
               className={cn(
-                "h-11 w-auto transition-[filter] duration-500 sm:h-12",
+                "h-14 w-auto max-w-[210px] object-contain transition-[filter] duration-500 sm:h-16 lg:h-[4.5rem] xl:h-20",
                 light && "brightness-0 invert",
               )}
             />
