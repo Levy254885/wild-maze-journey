@@ -38,8 +38,8 @@ function Home() {
 
   return (
     <>
-      {/* ——— Opening scene ——— */}
-      <section data-nav-theme="light" className="relative h-[100svh] w-full overflow-hidden bg-ink">
+      {/* ——— Opening scene (desktop: preserved full-bleed composition) ——— */}
+      <section data-nav-theme="light" className="relative hidden h-[100svh] w-full overflow-hidden bg-ink lg:block">
         <img
           src={client.sundownerRock}
           alt="Sunset over the plains from a rock outcrop, with a private bush bar set up nearby"
@@ -67,7 +67,9 @@ function Home() {
           <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow opacity-80">{site.name}</p>
-              <p className="display-xl mt-4 max-w-[12ch] leading-[0.95]">Breaking Normalcy</p>
+              <MaskText as="p" className="display-xl mt-4 max-w-[12ch] leading-[0.95]" delay={120}>
+                {["Breaking", "Normalcy"]}
+              </MaskText>
             </div>
             <a href="#introduction" className="eyebrow flex items-center gap-3 pb-2 opacity-85 transition-opacity hover:opacity-100">
               Scroll to discover
@@ -79,15 +81,44 @@ function Home() {
         </div>
       </section>
 
+      {/* ——— Opening scene (mobile / tablet: contained media band) ——— */}
+      <section data-nav-theme="dark" className="bg-background pt-[4.25rem] sm:pt-[4.75rem] lg:hidden">
+        <div className="relative h-[46svh] min-h-[280px] w-full overflow-hidden bg-ink">
+          <img
+            src={client.heroPoster || client.sundownerRock}
+            alt="Sunset over the plains, with a private bush bar set up on a rock outcrop"
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          {client.heroVideo ? (
+            <video
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              src={client.heroVideo}
+              poster={client.heroPoster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              disablePictureInPicture
+              preload="metadata"
+              aria-hidden="true"
+              tabIndex={-1}
+            />
+          ) : null}
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/45 to-transparent" />
+          <p className="eyebrow absolute bottom-4 left-5 text-[0.62rem] text-background/85 sm:left-8">
+            {site.tagline}
+          </p>
+        </div>
+      </section>
+
       {/* ——— Introduction ——— */}
-      <section id="introduction" data-nav-theme="dark" className="scroll-mt-24 bg-background px-5 py-24 sm:px-8 lg:px-12 lg:py-40">
+      <section id="introduction" data-nav-theme="dark" className="scroll-mt-24 bg-background px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-40">
         <div className="mx-auto max-w-[1400px]">
-          <Reveal>
-            <p className="display-lg max-w-[22ch]">
-              Wild places. Remarkable journeys. Stories worth carrying home.
-            </p>
-          </Reveal>
-          <Reveal delay={120} className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-24">
+          <MaskText as="h2" className="display-lg max-w-[22ch]">
+            {["Wild places.", "Remarkable journeys.", "Stories worth carrying home."]}
+          </MaskText>
+          <Reveal delay={160} className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-24">
             <p className="lede text-muted-foreground">
               WildMaze Safaris designs private, tailor-made journeys across Kenya, Tanzania and the
               Indian Ocean coast — planned in detail, guided with care and paced entirely around you.
@@ -99,10 +130,11 @@ function Home() {
                 ground falls to you. Private 4×4 Land Cruisers, luxury lodges and tented camps, and
                 a personal safari concierge from arrival to departure.
               </p>
-              <ArrowLink to="/our-story" className="mt-8">Our story</ArrowLink>
+              <Link to="/our-story" className="bar-link mt-8 text-foreground">Our story</Link>
             </div>
           </Reveal>
         </div>
+
       </section>
 
       {/* ——— Large destination image ——— */}
