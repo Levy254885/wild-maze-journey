@@ -147,6 +147,8 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        {/* Spacer for the fixed mobile booking bar */}
+        <div aria-hidden className="h-[3.75rem] bg-ink xl:hidden" />
       </EnquiryProvider>
     </QueryClientProvider>
   );
