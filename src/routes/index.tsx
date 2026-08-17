@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ImageReveal, Reveal } from "@/components/Reveal";
+import { ImageReveal, Reveal, MaskText } from "@/components/Reveal";
 import { PageHero } from "@/components/PageHero";
 import { SafariCollection, DestinationExplorer, ExperienceStrip } from "@/components/Collections";
 import { ArrowLink, ArrowButton } from "@/components/ArrowLink";
