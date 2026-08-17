@@ -208,7 +208,87 @@
   }
 }
 
+/* Motion tokens */
+:root {
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 400ms;
+  --dur-base: 700ms;
+  --dur-slow: 1000ms;
+}
+
+/* Bar-prefixed editorial link (reference-style "| About us") */
+@utility bar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  position: relative;
+  padding-left: 1rem;
+  transition: gap var(--dur-fast) var(--ease-editorial);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    bottom: 0.15em;
+    width: 2px;
+    background: currentColor;
+  }
+
+  &:hover {
+    gap: 1.5rem;
+  }
+}
+
+/* Masked line reveal: text slides up from behind its own clipping box */
+.mask-line {
+  display: block;
+  overflow: hidden;
+}
+
+.mask-line > * {
+  display: block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition:
+    transform var(--dur-slow) var(--ease-editorial),
+    opacity var(--dur-base) var(--ease-editorial);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.mask-line[data-visible="true"] > * {
+  transform: none;
+  opacity: 1;
+}
+
+/* Staggered children entrance */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-base) var(--ease-editorial),
+    transform var(--dur-base) var(--ease-editorial);
+}
+
+.stagger[data-visible="true"] > * {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger[data-visible="true"] > *:nth-child(1) { transition-delay: 60ms; }
+.stagger[data-visible="true"] > *:nth-child(2) { transition-delay: 140ms; }
+.stagger[data-visible="true"] > *:nth-child(3) { transition-delay: 220ms; }
+.stagger[data-visible="true"] > *:nth-child(4) { transition-delay: 300ms; }
+.stagger[data-visible="true"] > *:nth-child(5) { transition-delay: 380ms; }
+.stagger[data-visible="true"] > *:nth-child(6) { transition-delay: 460ms; }
+.stagger[data-visible="true"] > *:nth-child(7) { transition-delay: 540ms; }
+.stagger[data-visible="true"] > *:nth-child(8) { transition-delay: 620ms; }
+
 /* Reveal system */
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -292,7 +372,14 @@
     transform: none;
     clip-path: none;
   }
+
+  .mask-line > *,
+  .stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
+
 
 /* Slightly larger small-text scale for readability */
 @layer utilities {

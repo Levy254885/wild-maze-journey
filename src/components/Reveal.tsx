@@ -52,6 +52,53 @@ export function Reveal({ children, className, delay = 0, as: Tag = "div" }: Reve
   );
 }
 
+/**
+ * Masked line reveal — each line slides up from behind its own clip box.
+ * Pass a string (split on \n) or an array of lines.
+ */
+export function MaskText({
+  children,
+  className,
+  as: Tag = "p",
+  delay = 0,
+  step = 90,
+}: {
+  children: string | string[];
+  className?: string;
+  as?: ElementType;
+  delay?: number;
+  step?: number;
+}) {
+  const { ref, visible } = useInView<HTMLDivElement>(0.2);
+  const lines = Array.isArray(children) ? children : children.split("\n");
+
+  return (
+    <Tag ref={ref} className={className}>
+      {lines.map((line, i) => (
+        <span
+          key={`${line}-${i}`}
+          className="mask-line"
+          data-visible={visible}
+          style={{ ["--reveal-delay" as string]: `${delay + i * step}ms` }}
+        >
+          <span>{line}</span>
+        </span>
+      ))}
+    </Tag>
+  );
+}
+
+/** Staggered entrance for a group of sibling elements. */
+export function Stagger({ children, className, as: Tag = "div" }: RevealProps) {
+  const { ref, visible } = useInView<HTMLDivElement>(0.15);
+  return (
+    <Tag ref={ref} data-visible={visible} className={cn("stagger", className)}>
+      {children}
+    </Tag>
+  );
+}
+
+
 interface ImageRevealProps {
   src: string;
   alt: string;

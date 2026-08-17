@@ -7,8 +7,10 @@ import { cn } from "@/lib/utils";
 
 /**
  * Fixed overlay navigation.
- * Adapts between light and dark type by sampling whichever section sits
- * beneath it (sections opt in with data-nav-theme="light" | "dark").
+ * Desktop (xl+) keeps the original overlay behaviour: it samples whichever
+ * section sits beneath it (sections opt in with data-nav-theme="light" | "dark").
+ * Below xl the header is a solid ink band with a centred logo — the mobile
+ * navigation is treated as its own experience.
  */
 export function Header() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -64,23 +66,53 @@ export function Header() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-[80] transition-[background-color,color,border-color] duration-500",
-          light ? "text-background" : "text-foreground",
+          // Mobile / tablet: solid ink band, always legible.
+          "bg-ink text-background xl:bg-transparent",
+          light ? "xl:text-background" : "xl:text-foreground",
           scrolled && !menuOpen && !light
-            ? "border-b border-border bg-background/92 backdrop-blur-md"
+            ? "xl:border-b xl:border-border xl:bg-background/92 xl:backdrop-blur-md"
             : "border-b border-transparent",
-          menuOpen && "text-foreground",
+          menuOpen && "bg-transparent text-background xl:text-foreground",
         )}
       >
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-12">
-          <Link to="/" aria-label={`${site.name} — home`} className="flex shrink-0 items-center gap-3">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-[3.25rem_minmax(0,1fr)_3.25rem] items-center gap-3 px-4 py-3 sm:px-6 xl:flex xl:justify-between xl:gap-6 xl:px-12 xl:py-4">
+          {/* Mobile menu trigger (left) */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            className="-ml-1 flex h-12 w-12 items-center justify-center xl:hidden"
+          >
+            <span className="relative block h-3.5 w-7">
+              <span
+                className={cn(
+                  "absolute left-0 block h-px bg-current transition-all duration-[600ms] [transition-timing-function:var(--ease-editorial)]",
+                  menuOpen ? "top-1.5 w-full rotate-45" : "top-0 w-full",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 block h-px bg-current transition-all duration-[600ms] [transition-timing-function:var(--ease-editorial)]",
+                  menuOpen ? "top-1.5 w-full -rotate-45" : "top-3.5 w-3/4",
+                )}
+              />
+            </span>
+          </button>
+
+          <Link
+            to="/"
+            aria-label={`${site.name} — home`}
+            className="flex shrink-0 items-center justify-center xl:justify-start"
+          >
             <img
               src={site.logo}
               alt={`${site.name} logo`}
-              width={140}
-              height={140}
+              width={220}
+              height={220}
               className={cn(
-                "h-14 w-auto max-w-[210px] object-contain transition-[filter] duration-500 sm:h-16 lg:h-[4.5rem] xl:h-20",
-                light && "brightness-0 invert",
+                "h-12 w-auto max-w-[190px] object-contain brightness-0 invert transition-[filter] duration-500 sm:h-14 xl:h-[4.5rem] xl:max-w-[230px] 2xl:h-20",
+                light ? "xl:brightness-0 xl:invert" : "xl:brightness-100 xl:invert-0",
               )}
             />
             <span className="sr-only">{site.name}</span>
@@ -99,7 +131,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-end gap-4">
             <button
               type="button"
               onClick={() => setCollectionOpen((v) => !v)}
@@ -114,32 +146,9 @@ export function Header() {
             <button
               type="button"
               onClick={() => openEnquiry()}
-              className="eyebrow hidden whitespace-nowrap border-b border-current pb-1 text-[0.68rem] tracking-[0.18em] transition-opacity hover:opacity-70 lg:inline-block 2xl:text-[0.75rem]"
+              className="eyebrow hidden whitespace-nowrap border-b border-current pb-1 text-[0.68rem] tracking-[0.18em] transition-opacity hover:opacity-70 xl:inline-block 2xl:text-[0.75rem]"
             >
               Plan your safari
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setMenuOpen((v) => !v)}
-              aria-expanded={menuOpen}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              className="flex h-11 w-11 shrink-0 items-center justify-center xl:hidden"
-            >
-              <span className="relative block h-3 w-6">
-                <span
-                  className={cn(
-                    "absolute left-0 block h-px w-full bg-current transition-transform duration-500",
-                    menuOpen ? "top-1.5 rotate-45" : "top-0",
-                  )}
-                />
-                <span
-                  className={cn(
-                    "absolute left-0 block h-px w-full bg-current transition-transform duration-500",
-                    menuOpen ? "top-1.5 -rotate-45" : "top-3",
-                  )}
-                />
-              </span>
             </button>
           </div>
         </div>
@@ -204,28 +213,40 @@ export function Header() {
       </header>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} onEnquire={() => { setMenuOpen(false); openEnquiry(); }} />
+
+      {/* Persistent booking bar (mobile / tablet) — mirrors the reference's fixed CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-[75] border-t border-background/15 bg-ink text-background xl:hidden">
+        <button
+          type="button"
+          onClick={() => openEnquiry()}
+          className="flex w-full items-center justify-center gap-4 py-4"
+        >
+          <span aria-hidden className="block h-5 w-0.5 bg-current" />
+          <span className="font-display text-[1.6rem] leading-none font-light">Plan your safari</span>
+        </button>
+      </div>
     </>
   );
 }
 
-function Accordion({ title, children }: { title: string; children: React.ReactNode }) {
+function Accordion({ title, children, index = 0 }: { title: string; children: React.ReactNode; index?: number }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-border">
+    <div className="border-b border-background/15" style={{ transitionDelay: `${index * 60}ms` }}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between py-4 text-left"
+        className="flex w-full items-center justify-between py-5 text-left"
       >
-        <span className="eyebrow text-muted-foreground">{title}</span>
-        <span aria-hidden className={cn("transition-transform duration-500", open && "rotate-45")}>
+        <span className="display-md text-[1.6rem] leading-none">{title}</span>
+        <span aria-hidden className={cn("text-xl transition-transform duration-500 [transition-timing-function:var(--ease-editorial)]", open && "rotate-45")}>
           +
         </span>
       </button>
       <div
         className={cn(
-          "grid transition-[grid-template-rows] duration-[600ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)]",
+          "grid transition-[grid-template-rows] duration-[600ms] [transition-timing-function:var(--ease-editorial)]",
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
@@ -250,18 +271,23 @@ function MobileMenu({
     <div
       aria-hidden={!open}
       className={cn(
-        "fixed inset-0 z-[70] bg-background transition-[opacity,transform] duration-[600ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] xl:hidden",
-        open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0",
+        "fixed inset-0 z-[70] bg-ink text-background transition-[opacity,clip-path] duration-[700ms] [transition-timing-function:var(--ease-editorial)] xl:hidden",
+        open
+          ? "pointer-events-auto opacity-100 [clip-path:inset(0_0_0%_0)]"
+          : "pointer-events-none opacity-0 [clip-path:inset(0_0_100%_0)]",
       )}
     >
-      <div className="no-scrollbar h-full overflow-y-auto px-5 pb-16 pt-24 sm:px-8">
-        <nav aria-label="Mobile" className="flex flex-col">
+      <div
+        className="no-scrollbar h-full overflow-y-auto px-5 pb-28 pt-24 sm:px-8"
+        data-visible={open}
+      >
+        <nav aria-label="Mobile" className="stagger flex flex-col" data-visible={open}>
           {navigation.slice(0, 2).map((item) => (
             <Link
               key={item.to}
               to={item.to}
               onClick={onClose}
-              className="display-md border-b border-border py-4 text-[1.75rem]"
+              className="display-md border-b border-background/15 py-5 text-[1.9rem] leading-none"
             >
               {item.label}
             </Link>
@@ -271,7 +297,7 @@ function MobileMenu({
             <ul className="space-y-3">
               {destinations.map((d) => (
                 <li key={d.slug}>
-                  <Link to="/destinations" hash={d.slug} onClick={onClose} className="display-md text-[1.35rem] text-foreground/80">
+                  <Link to="/destinations" hash={d.slug} onClick={onClose} className="text-base text-background/70">
                     {d.name}
                   </Link>
                 </li>
@@ -287,7 +313,7 @@ function MobileMenu({
                     to="/safaris/$slug"
                     params={{ slug: s.slug }}
                     onClick={onClose}
-                    className="display-md text-[1.35rem] text-foreground/80"
+                    className="text-base text-background/70"
                   >
                     {s.name}
                   </Link>
@@ -301,18 +327,18 @@ function MobileMenu({
               key={item.to}
               to={item.to}
               onClick={onClose}
-              className="display-md border-b border-border py-4 text-[1.75rem]"
+              className="display-md border-b border-background/15 py-5 text-[1.9rem] leading-none"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="mt-10 space-y-4">
-          <button type="button" onClick={onEnquire} className="eyebrow block border-b border-foreground pb-2">
+        <div className="mt-12 space-y-5">
+          <button type="button" onClick={onEnquire} className="bar-link">
             Plan your safari
           </button>
-          <div className="flex flex-col gap-3 pt-4 text-sm text-muted-foreground">
+          <div className="flex flex-col gap-3 pt-2 text-sm text-background/65">
             <a href={whatsappHref} target="_blank" rel="noreferrer" className="line-link w-fit">
               WhatsApp {site.whatsapp.display}
             </a>
