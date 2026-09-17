@@ -16,6 +16,8 @@ import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as OurStoryRouteImport } from './routes/our-story'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as InspirationIndexRouteImport } from './routes/inspiration.index'
 import { Route as InspirationSlugRouteImport } from './routes/inspiration.$slug'
 import { Route as SafarisIndexRouteImport } from './routes/safaris.index'
@@ -56,6 +58,16 @@ const OurStoryRoute = OurStoryRouteImport.update({
   path: '/our-story',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InspirationIndexRoute = InspirationIndexRouteImport.update({
   id: '/inspiration/',
   path: '/inspiration/',
@@ -85,6 +97,8 @@ export interface FileRoutesByFullPath {
   '/experiences': typeof ExperiencesRoute
   '/gallery': typeof GalleryRoute
   '/our-story': typeof OurStoryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/inspiration/$slug': typeof InspirationSlugRoute
   '/safaris/$slug': typeof SafarisSlugRoute
   '/inspiration/': typeof InspirationIndexRoute
@@ -98,6 +112,8 @@ export interface FileRoutesByTo {
   '/experiences': typeof ExperiencesRoute
   '/gallery': typeof GalleryRoute
   '/our-story': typeof OurStoryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/inspiration/$slug': typeof InspirationSlugRoute
   '/safaris/$slug': typeof SafarisSlugRoute
   '/inspiration': typeof InspirationIndexRoute
@@ -112,6 +128,8 @@ export interface FileRoutesById {
   '/experiences': typeof ExperiencesRoute
   '/gallery': typeof GalleryRoute
   '/our-story': typeof OurStoryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/inspiration/$slug': typeof InspirationSlugRoute
   '/safaris/$slug': typeof SafarisSlugRoute
   '/inspiration/': typeof InspirationIndexRoute
@@ -127,6 +145,8 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/gallery'
     | '/our-story'
+    | '/privacy-policy'
+    | '/terms-and-conditions'
     | '/inspiration/$slug'
     | '/safaris/$slug'
     | '/inspiration/'
@@ -140,6 +160,8 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/gallery'
     | '/our-story'
+    | '/privacy-policy'
+    | '/terms-and-conditions'
     | '/inspiration/$slug'
     | '/safaris/$slug'
     | '/inspiration'
@@ -153,6 +175,8 @@ export interface FileRouteTypes {
     | '/experiences'
     | '/gallery'
     | '/our-story'
+    | '/privacy-policy'
+    | '/terms-and-conditions'
     | '/inspiration/$slug'
     | '/safaris/$slug'
     | '/inspiration/'
@@ -167,6 +191,8 @@ export interface RootRouteChildren {
   ExperiencesRoute: typeof ExperiencesRoute
   GalleryRoute: typeof GalleryRoute
   OurStoryRoute: typeof OurStoryRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   InspirationSlugRoute: typeof InspirationSlugRoute
   SafarisSlugRoute: typeof SafarisSlugRoute
   InspirationIndexRoute: typeof InspirationIndexRoute
@@ -224,6 +250,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/inspiration/': {
       id: '/inspiration/'
       path: '/inspiration'
@@ -263,6 +303,8 @@ const rootRouteChildren: RootRouteChildren = {
   ExperiencesRoute: ExperiencesRoute,
   GalleryRoute: GalleryRoute,
   OurStoryRoute: OurStoryRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   InspirationSlugRoute: InspirationSlugRoute,
   SafarisSlugRoute: SafarisSlugRoute,
   InspirationIndexRoute: InspirationIndexRoute,
