@@ -20,14 +20,14 @@ export const client = {
   conservation: "/images/conservation-planting.jpg",
   heroVideo: "/videos/wildmaze-hero.mp4",
   heroPoster: "/images/hero-video-poster.jpg",
-  /** Client photography — destination & experience replacements */
-  lionsAcacia: "/images/lions-acacia.jpg",
-  amboseliElephants: "/images/amboseli-elephants.jpg",
-  tsavoElephants: "/images/tsavo-elephants.jpg",
-  dianiBeach: "/images/diani-beach.jpg",
-  zanzibarDhow: "/images/zanzibar-dhow.jpg",
-  mzimaSprings: "/images/mzima-springs.jpg",
-  gorillaTrek: "/images/gorilla-trek.jpg",
+  /** Client photography — filenames as committed in public/images */
+  lionsAcacia: "/images/IMG-20260917-WA0029.jpg",
+  amboseliElephants: "/images/IMG-20260917-WA0031.jpg",
+  tsavoElephants: "/images/IMG-20260917-WA0017.jpg",
+  dianiBeach: "/images/IMG-20260917-WA0030.jpg",
+  zanzibarDhow: "/images/IMG-20260917-WA0015.jpg",
+  mzimaSprings: "/images/IMG-20260917-WA0018.jpg",
+  gorillaTrek: "/images/IMG-20260917-WA0019.jpg",
 };
 
 /** Fallback imagery where no client photograph is yet assigned. */
