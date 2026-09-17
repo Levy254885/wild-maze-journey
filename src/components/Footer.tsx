@@ -77,7 +77,7 @@ function Newsletter() {
                 className="mt-0.5 h-4 w-4 shrink-0 accent-[oklch(0.32_0.056_152)]"
               />
               I agree to receive occasional emails from {site.name} and have read the{" "}
-              <Link to="/contact" className="line-link text-foreground">privacy policy</Link>.
+              <Link to="/privacy-policy" className="line-link text-foreground">privacy policy</Link>.
             </label>
             {error ? (
               <p role="alert" className="text-xs text-destructive sm:col-span-2">{error}</p>
@@ -179,9 +179,8 @@ export function Footer() {
               © {new Date().getFullYear()} {site.name}. All rights reserved.
             </p>
             <ul className="flex flex-wrap gap-6">
-              <li><Link to="/contact" className="line-link">Privacy Policy</Link></li>
-              <li><Link to="/contact" className="line-link">Terms &amp; Conditions</Link></li>
-              <li><Link to="/contact" className="line-link">Cookie Policy</Link></li>
+              <li><Link to="/privacy-policy" className="line-link">Privacy Policy</Link></li>
+              <li><Link to="/terms-and-conditions" className="line-link">Terms & Conditions</Link></li>
             </ul>
           </div>
         </div>
